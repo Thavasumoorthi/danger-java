@@ -20,9 +20,11 @@ modifiedFiles=createdModifiedFiles.filter(file=>{
 })
 
 
-modifiedFiles.forEach((file=>{
+
+const addedModifiedFiles=[...danger.git.modified_files,...danger.git.created_files]
+
+addedModifiedFiles.forEach((file=>{
      const fileContent=readFileSync(file,'utf8');
-     console.log("+++File content is ",fileContent.split("\n"))
      const modifiedfilecontent=fileContent.split("\n")
      modifiedfilecontent.forEach((line=>{
         if(line.includes("System.out.println"))
@@ -34,7 +36,7 @@ modifiedFiles.forEach((file=>{
 }))
 
 
-modifiedFiles.forEach((file=>{
+addedModifiedFiles.forEach((file=>{
     
     console.log("File is ",file);
 
