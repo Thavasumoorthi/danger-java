@@ -2,9 +2,7 @@ public class Example{
 
 
     public static void first()
-    {
-        System.out.println("first printoutstatement");
-        System.out.println("first printoutstatement");
+    {        System.out.println("first printoutstatement");
 
     }
     public static void main(String[] args)
